@@ -17,7 +17,7 @@ app.get("/", async (req, res) => {
     console.log('req')
 try {
     const client = new DynamoDB({
-     
+     region:'eu-west-1'
       });
       const ddbDocClient = DynamoDBDocument.from(client, translateConfig);
       const response = await ddbDocClient.send(
@@ -28,6 +28,7 @@ try {
       console.log(response);
       res.send(response);
 } catch (error) {
+    console.log(error)
     res.send(error)
 }
 });
