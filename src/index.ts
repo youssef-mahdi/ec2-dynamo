@@ -14,6 +14,7 @@ const translateConfig = {
   },
 };
 app.get("/", async (req, res) => {
+    console.log('req')
 try {
     const client = new DynamoDB({
      
